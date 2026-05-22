@@ -3,538 +3,461 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<title>KALEIDO — 株式会社カレイド</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --ink: #0E0E12;
-  --ink-mid: #1C1C24;
-  --ink-soft: #2E2E3A;
-  --silver: #F2F1EE;
-  --silver-mid: #E4E2DC;
-  --text-muted: #7A7A88;
-  --text-light: #B0AFBA;
-  --k-violet: #5B4FCF;
-  --k-teal: #2AA89A;
-  --k-coral: #D95F4B;
-  --k-amber: #C98A2B;
-  --k-rose: #B84F7A;
-  --k-blue: #2C6DB5;
-  --k-green: #3A8F5C;
-  --accent: #6C5CE7;
-  --accent-light: #8B7CF0;
+  --ink:        #07070F;
+  --ink-mid:    #0D0D1C;
+  --ink-soft:   #161626;
+  --silver:     #F4F3F0;
+  --silver-mid: #E5E3DC;
+  --muted:      #6C6C80;
+  --faint:      #A4A4B8;
+
+  --g-violet:  #7C6FF7;
+  --g-teal:    #2ABFCC;
+  --g-coral:   #E8705C;
+  --g-amber:   #F5A820;
+  --g-rose:    #D0588A;
+  --g-blue:    #4A8AEC;
+  --g-emerald: #36C87C;
+  --g-gold:    #C89040;
+
+  --accent:       #7C6FF7;
+  --accent-light: #A89CF8;
+  --accent-glow:  rgba(124,111,247,0.22);
 }
+
 body {
   font-family: 'Noto Sans JP', sans-serif;
   color: var(--ink);
   background: #fff;
   font-size: 15px;
   line-height: 1.8;
+  overflow-x: hidden;
 }
 
 /* ===== NAV ===== */
 nav {
   position: sticky; top: 0; z-index: 100;
-  background: rgba(14,14,18,0.97);
-  backdrop-filter: blur(10px);
+  background: rgba(7,7,15,0.96);
+  backdrop-filter: blur(16px);
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 56px;
-  height: 66px;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  padding: 0 60px; height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.nav-logo { display: flex; align-items: baseline; gap: 6px; }
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.nav-mark { width: 30px; height: 30px; }
+.nav-mark svg { width: 100%; height: 100%; }
 .nav-logo-en {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: 0.12em;
+  font-size: 20px; font-weight: 600;
+  color: #fff; letter-spacing: 0.2em; line-height: 1;
 }
-.nav-logo-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; margin-bottom: 4px; align-self: flex-end; }
-.nav-logo-ja { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 0.15em; font-weight: 300; }
+.nav-logo-ja {
+  font-size: 10px; color: rgba(255,255,255,0.28);
+  letter-spacing: 0.18em; font-weight: 300; margin-top: 3px;
+}
 .nav-links { display: flex; gap: 36px; }
 .nav-links a {
-  color: rgba(255,255,255,0.55);
-  text-decoration: none;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  transition: color 0.2s;
-  position: relative;
+  color: rgba(255,255,255,0.45); text-decoration: none;
+  font-size: 11px; letter-spacing: 0.12em;
+  position: relative; padding-bottom: 2px; transition: color 0.2s;
 }
 .nav-links a::after {
-  content: '';
-  position: absolute; bottom: -4px; left: 0; right: 0;
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
   height: 1px; background: var(--accent-light);
-  transform: scaleX(0); transition: transform 0.2s;
+  transform: scaleX(0); transform-origin: left; transition: transform 0.25s;
 }
 .nav-links a:hover { color: #fff; }
 .nav-links a:hover::after { transform: scaleX(1); }
 .nav-cta {
-  background: var(--accent);
-  color: #fff; border: none;
-  padding: 10px 22px;
-  font-size: 12px;
+  background: transparent; color: rgba(255,255,255,0.65);
+  border: 1px solid rgba(124,111,247,0.45);
+  padding: 9px 20px; font-size: 11px;
   font-family: 'Noto Sans JP', sans-serif;
-  cursor: pointer;
-  letter-spacing: 0.1em;
-  font-weight: 500;
-  border-radius: 2px;
-  transition: background 0.2s;
+  cursor: pointer; letter-spacing: 0.1em; font-weight: 500;
+  border-radius: 2px; transition: all 0.25s;
 }
-.nav-cta:hover { background: var(--accent-light); }
+.nav-cta:hover {
+  background: var(--accent); border-color: var(--accent); color: #fff;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
 
 /* ===== HERO ===== */
 .hero {
   background: var(--ink);
-  min-height: 580px;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  align-items: center;
-  gap: 0;
-  overflow: hidden;
-  position: relative;
+  min-height: calc(100vh - 64px);
+  display: grid; grid-template-columns: 1fr 1fr;
+  overflow: hidden; position: relative;
 }
 .hero-left {
-  padding: 80px 60px 80px 56px;
-  position: relative; z-index: 1;
+  padding: 100px 60px; position: relative; z-index: 1;
+  display: flex; flex-direction: column; justify-content: center;
 }
-.hero-eyebrow {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 28px;
+.eyebrow {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 32px;
 }
-.hero-eyebrow-line { width: 28px; height: 1px; background: var(--accent); }
-.hero-eyebrow-text {
-  font-size: 11px; letter-spacing: 0.22em;
-  color: var(--accent-light); font-weight: 400;
-  text-transform: uppercase;
+.eyebrow-bar {
+  width: 32px; height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent));
+}
+.eyebrow-text {
+  font-size: 10px; letter-spacing: 0.3em;
+  color: var(--accent-light); text-transform: uppercase;
 }
 .hero-title {
   font-family: 'Noto Serif JP', serif;
-  font-size: 36px; font-weight: 600;
-  color: #fff; line-height: 1.5;
-  margin-bottom: 28px; letter-spacing: 0.02em;
+  font-size: 44px; font-weight: 600;
+  color: #fff; line-height: 1.55; margin-bottom: 24px;
 }
-.hero-title .accent { color: var(--accent-light); }
-.hero-subtitle-en {
+.hero-title .hi {
+  color: transparent;
+  background: linear-gradient(120deg, var(--accent-light) 0%, var(--g-teal) 100%);
+  -webkit-background-clip: text; background-clip: text;
+}
+.hero-sub {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 14px; font-weight: 400; font-style: italic;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 0.08em;
-  margin-bottom: 24px;
+  font-size: 13px; font-style: italic; font-weight: 300;
+  color: rgba(255,255,255,0.25); letter-spacing: 0.1em; margin-bottom: 28px;
 }
 .hero-desc {
-  color: rgba(255,255,255,0.5);
-  font-size: 14px; line-height: 2;
-  font-weight: 300; max-width: 440px;
-  margin-bottom: 40px;
+  font-size: 14px; color: rgba(255,255,255,0.42);
+  line-height: 2.1; font-weight: 300; max-width: 400px;
+  border-left: 2px solid rgba(124,111,247,0.3);
+  padding-left: 20px; margin-bottom: 48px;
 }
-.hero-actions { display: flex; gap: 14px; }
+.hero-actions { display: flex; gap: 16px; align-items: center; }
 .btn-primary {
   background: var(--accent); color: #fff; border: none;
-  padding: 14px 28px; font-size: 13px;
+  padding: 14px 30px; font-size: 12px;
   font-family: 'Noto Sans JP', sans-serif;
-  cursor: pointer; letter-spacing: 0.08em; font-weight: 500;
-  border-radius: 2px; transition: background 0.2s;
+  cursor: pointer; letter-spacing: 0.1em; font-weight: 500;
+  border-radius: 2px; transition: all 0.25s;
+  box-shadow: 0 4px 24px var(--accent-glow);
 }
-.btn-primary:hover { background: var(--accent-light); }
+.btn-primary:hover {
+  background: var(--accent-light);
+  box-shadow: 0 6px 32px rgba(124,111,247,0.38);
+  transform: translateY(-1px);
+}
 .btn-ghost {
-  background: transparent; color: rgba(255,255,255,0.6);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 13px 28px; font-size: 13px;
-  font-family: 'Noto Sans JP', sans-serif;
-  cursor: pointer; letter-spacing: 0.08em;
-  border-radius: 2px; transition: all 0.2s;
+  background: transparent; color: rgba(255,255,255,0.45);
+  border: none; padding: 14px 0;
+  font-size: 12px; font-family: 'Noto Sans JP', sans-serif;
+  cursor: pointer; letter-spacing: 0.1em; transition: color 0.2s;
+  display: flex; align-items: center; gap: 8px;
 }
-.btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+.btn-ghost::after { content: '→'; transition: transform 0.2s; display: inline-block; }
+.btn-ghost:hover { color: #fff; }
+.btn-ghost:hover::after { transform: translateX(4px); }
 
-/* Kaleidoscope visual */
+/* Hero right — mandala */
 .hero-right {
-  position: relative; height: 100%; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--ink-mid);
+  position: relative; display: flex;
+  align-items: center; justify-content: center; overflow: hidden;
 }
-.kaleido-wrap {
-  position: relative; width: 340px; height: 340px;
-}
-.kaleido-ring {
+.hero-right-glow {
   position: absolute; inset: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.06);
-  animation: kSpin 20s linear infinite;
+  background: radial-gradient(ellipse at 55% 50%, rgba(124,111,247,0.1) 0%, rgba(42,191,204,0.05) 45%, transparent 70%);
 }
-.kaleido-ring:nth-child(2) { inset: 24px; animation-duration: 15s; animation-direction: reverse; }
-.kaleido-ring:nth-child(3) { inset: 48px; animation-duration: 25s; }
-@keyframes kSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.kaleido-center {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
+.kaleido-svg {
+  width: 440px; height: 440px; position: relative; z-index: 1;
+  filter: drop-shadow(0 0 48px rgba(124,111,247,0.18));
 }
-.k-logo-big {
+.mg { transform-box: fill-box; transform-origin: center; }
+.mg-outer  { animation: mspin 30s linear infinite; }
+.mg-inner  { animation: mspin 18s linear infinite reverse; }
+.mg-spokes { animation: mspin 80s linear infinite; }
+.mg-deco   { animation: mspin 45s linear infinite reverse; }
+@keyframes mspin { to { transform: rotate(360deg); } }
+
+.hero-tag {
+  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
   font-family: 'Cormorant Garamond', serif;
-  font-size: 72px; font-weight: 600;
-  color: rgba(255,255,255,0.08);
-  letter-spacing: 0.05em;
-  user-select: none;
-}
-.kaleido-orbit {
-  position: absolute; inset: 0;
-}
-.k-dot {
-  position: absolute;
-  width: 8px; height: 8px; border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.hero-right-label {
-  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px; letter-spacing: 0.3em;
-  color: rgba(255,255,255,0.2);
-  text-transform: uppercase; white-space: nowrap;
+  font-size: 10px; letter-spacing: 0.36em;
+  color: rgba(255,255,255,0.16); text-transform: uppercase; white-space: nowrap;
 }
 
-/* ===== TAGLINE BAND ===== */
-.tagline-band {
-  background: var(--accent);
-  padding: 20px 56px;
+/* ===== PRISM DIVIDER ===== */
+.prism {
+  height: 2px;
+  background: linear-gradient(to right,
+    var(--g-violet), var(--g-teal), var(--g-coral),
+    var(--g-amber), var(--g-rose), var(--g-blue),
+    var(--g-emerald), var(--g-violet));
+}
+
+/* ===== TAGLINE ===== */
+.tagline-strip {
+  background: var(--ink-soft);
+  padding: 22px 60px;
   display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.tagline-text {
+.tagline-en {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 18px; font-style: italic;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.06em;
+  font-size: 17px; font-style: italic; font-weight: 300;
+  color: rgba(255,255,255,0.55); letter-spacing: 0.08em;
 }
-.tagline-ja {
-  font-size: 12px; color: rgba(255,255,255,0.65);
-  letter-spacing: 0.15em; font-weight: 300;
+.tagline-ja { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.15em; font-weight: 300; }
+
+/* ===== SHARED SECTION LABEL ===== */
+.sec-label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 10px; letter-spacing: 0.28em;
+  color: var(--accent); text-transform: uppercase;
+  font-weight: 500; margin-bottom: 14px;
 }
+.sec-label::before {
+  content: ''; width: 24px; height: 1px; flex-shrink: 0;
+  background: linear-gradient(to right, transparent, var(--accent));
+}
+.sec-label.light { color: var(--accent-light); }
+.sec-label.light::before { background: linear-gradient(to right, transparent, var(--accent-light)); }
+
+.sec-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 28px; font-weight: 600; line-height: 1.4; margin-bottom: 12px;
+}
+.sec-desc { font-size: 14px; color: var(--muted); font-weight: 300; line-height: 1.9; max-width: 520px; }
 
 /* ===== CONCEPT ===== */
 .concept {
-  padding: 88px 56px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  background: #fff;
+  padding: 100px 60px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center; background: #fff;
 }
-.concept-label {
-  font-size: 11px; letter-spacing: 0.22em;
-  color: var(--accent); text-transform: uppercase;
-  font-weight: 500; margin-bottom: 14px;
-  display: flex; align-items: center; gap: 10px;
-}
-.concept-label::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
-.concept-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 26px; color: var(--ink);
-  font-weight: 600; line-height: 1.5;
-  margin-bottom: 20px;
-}
+.concept-title { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--ink); font-weight: 600; line-height: 1.5; margin-bottom: 22px; }
 .concept-title em { font-style: normal; color: var(--accent); }
-.concept-body {
-  font-size: 14px; color: var(--text-muted);
-  line-height: 2.1; font-weight: 300;
+.concept-body { font-size: 14px; color: var(--muted); line-height: 2.2; font-weight: 300; }
+
+.etym-card {
+  background: var(--ink); padding: 44px 40px;
+  position: relative; overflow: hidden;
 }
-.concept-etymology {
-  background: var(--silver);
-  padding: 32px 36px;
-  border-left: 3px solid var(--accent);
+.etym-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, var(--accent), var(--g-teal));
+}
+.etym-card::after {
+  content: 'K'; position: absolute; bottom: -16px; right: 12px;
+  font-family: 'Cormorant Garamond', serif; font-size: 130px; font-weight: 600;
+  color: rgba(255,255,255,0.03); line-height: 1; pointer-events: none;
 }
 .etym-word {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px; font-weight: 600;
-  color: var(--ink); margin-bottom: 16px;
-  letter-spacing: 0.06em;
+  font-size: 36px; font-weight: 600; color: #fff; margin-bottom: 20px; letter-spacing: 0.06em;
 }
-.etym-parts { display: flex; gap: 0; margin-bottom: 20px; }
-.etym-part {
-  padding: 8px 16px;
-  font-size: 12px; letter-spacing: 0.08em;
-  font-weight: 500;
-}
-.etym-part.kalos { background: var(--accent); color: #fff; }
-.etym-part.eidos { background: var(--ink); color: rgba(255,255,255,0.8); }
-.etym-part-label { font-size: 10px; opacity: 0.7; display: block; margin-top: 2px; }
-.etym-desc {
-  font-size: 13px; color: var(--text-muted);
-  line-height: 1.85; font-weight: 300;
-}
-.etym-desc strong { color: var(--ink); font-weight: 500; }
+.etym-pills { display: flex; gap: 8px; margin-bottom: 24px; }
+.etym-pill { padding: 6px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; border-radius: 2px; }
+.etym-pill.kalos { background: var(--accent); color: #fff; }
+.etym-pill.eidos { background: var(--g-teal); color: #fff; }
+.etym-pill-sub { display: block; font-size: 9px; opacity: 0.7; margin-top: 2px; letter-spacing: 0.06em; }
+.etym-desc { font-size: 13px; color: rgba(255,255,255,0.42); line-height: 1.9; font-weight: 300; }
+.etym-desc strong { color: rgba(255,255,255,0.78); font-weight: 500; }
 
 /* ===== SERVICES ===== */
-.services { background: var(--silver); padding: 88px 56px; }
-.section-header { margin-bottom: 52px; }
-.section-label {
-  font-size: 11px; letter-spacing: 0.22em;
-  color: var(--accent); text-transform: uppercase;
-  font-weight: 500; margin-bottom: 12px;
-  display: flex; align-items: center; gap: 10px;
+.services {
+  background: var(--silver); padding: 100px 60px;
+  position: relative; overflow: hidden;
 }
-.section-label::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
-.section-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 26px; color: var(--ink);
-  font-weight: 600; line-height: 1.4; margin-bottom: 12px;
+.services::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='52' viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='26,4 48,17 48,35 26,48 4,35 4,17' fill='none' stroke='%23000' stroke-opacity='0.022' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 52px 52px;
 }
-.section-desc {
-  font-size: 14px; color: var(--text-muted);
-  font-weight: 300; line-height: 1.9; max-width: 540px;
+.services-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 10px; margin-top: 52px; position: relative;
 }
+.svc {
+  background: #fff; padding: 32px 24px 40px;
+  position: relative; overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.svc::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: currentColor; transition: height 0.25s;
+}
+.svc:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+.svc:hover::before { height: 3px; }
 
-.services-hub {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+.svc-core { background: var(--ink); color: var(--accent); }
+.svc-core::before { background: var(--accent); height: 2px; }
+.svc-1 { color: var(--g-violet); }
+.svc-2 { color: var(--g-teal); }
+.svc-3 { color: var(--g-coral); }
+.svc-4 { color: var(--g-amber); }
+.svc-5 { color: var(--g-rose); }
+.svc-6 { color: var(--g-blue); }
+.svc-7 { color: var(--g-emerald); }
+
+.svc-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-bottom: 20px; }
+.svc-name { font-family: 'Noto Serif JP', serif; font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; line-height: 1.4; }
+.svc-core .svc-name { color: #fff; }
+.svc-en { font-family: 'Cormorant Garamond', serif; font-size: 10px; color: var(--faint); letter-spacing: 0.14em; margin-bottom: 14px; display: block; }
+.svc-core .svc-en { color: rgba(255,255,255,0.2); }
+.svc-text { font-size: 12px; color: var(--muted); line-height: 1.85; font-weight: 300; }
+.svc-core .svc-text { color: rgba(255,255,255,0.35); }
+.svc-num {
+  position: absolute; bottom: 12px; right: 16px;
+  font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 400;
+  line-height: 1; color: currentColor; opacity: 0.08;
 }
-.service-card {
-  background: #fff;
-  padding: 32px 26px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: default;
-  border-bottom: 3px solid transparent;
-}
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-}
-.service-card.core {
-  grid-column: span 1;
-  background: var(--ink);
-  border-bottom-color: var(--accent);
-}
-.service-card.core .service-name { color: #fff; }
-.service-card.core .service-text { color: rgba(255,255,255,0.45); }
-.service-card.core .service-num { color: rgba(255,255,255,0.04); }
-.service-card.s1 { border-bottom-color: var(--k-violet); }
-.service-card.s2 { border-bottom-color: var(--k-teal); }
-.service-card.s3 { border-bottom-color: var(--k-coral); }
-.service-card.s4 { border-bottom-color: var(--k-amber); }
-.service-card.s5 { border-bottom-color: var(--k-rose); }
-.service-card.s6 { border-bottom-color: var(--k-blue); }
-.service-card.s7 { border-bottom-color: var(--k-green); }
-.service-swatch {
-  width: 8px; height: 8px; border-radius: 50%;
-  margin-bottom: 18px;
-}
-.service-card.core .service-swatch { background: var(--accent); }
-.service-card.s1 .service-swatch { background: var(--k-violet); }
-.service-card.s2 .service-swatch { background: var(--k-teal); }
-.service-card.s3 .service-swatch { background: var(--k-coral); }
-.service-card.s4 .service-swatch { background: var(--k-amber); }
-.service-card.s5 .service-swatch { background: var(--k-rose); }
-.service-card.s6 .service-swatch { background: var(--k-blue); }
-.service-card.s7 .service-swatch { background: var(--k-green); }
-.service-name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px; color: var(--ink);
-  font-weight: 600; margin-bottom: 10px;
-  letter-spacing: 0.03em; line-height: 1.4;
-}
-.service-name-en {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px; color: var(--text-light);
-  letter-spacing: 0.12em; margin-bottom: 12px;
-  display: block;
-}
-.service-card.core .service-name-en { color: rgba(255,255,255,0.25); }
-.service-text {
-  font-size: 12px; color: var(--text-muted);
-  line-height: 1.8; font-weight: 300;
-}
-.service-num {
-  position: absolute; bottom: 16px; right: 20px;
-  font-size: 40px; color: rgba(0,0,0,0.035);
-  font-weight: 700; font-family: 'Cormorant Garamond', serif;
-  line-height: 1;
-}
+.svc-core .svc-num { color: #fff; opacity: 0.04; }
 
 /* ===== APPROACH ===== */
-.approach {
-  background: var(--ink);
-  padding: 88px 56px;
+.approach { background: var(--ink); padding: 100px 60px; position: relative; overflow: hidden; }
+.approach::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 75% 50%, rgba(124,111,247,0.07) 0%, transparent 55%);
 }
-.approach .section-label::before { background: var(--accent-light); }
-.approach .section-label { color: var(--accent-light); }
-.approach .section-title { color: #fff; }
-.approach .section-desc { color: rgba(255,255,255,0.45); max-width: 100%; }
-.approach-steps {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background: rgba(255,255,255,0.06);
-  margin-top: 48px;
+.approach-track {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 0; margin-top: 56px; position: relative;
 }
-.step {
-  background: var(--ink);
-  padding: 36px 28px;
-  position: relative;
+.approach-track::before {
+  content: ''; position: absolute;
+  top: 27px; left: 28px; right: 28px; height: 1px;
+  background: linear-gradient(to right, var(--g-violet), var(--g-teal), var(--g-coral), var(--g-amber), var(--g-emerald));
+  opacity: 0.35;
 }
-.step-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 44px; font-weight: 400;
-  color: rgba(255,255,255,0.06); line-height: 1;
-  margin-bottom: 16px;
+.step { padding-right: 20px; }
+.step-circ {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--ink-soft); border: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 24px; position: relative; z-index: 1;
 }
-.step-title {
-  font-size: 14px; color: #fff;
-  font-weight: 500; margin-bottom: 10px;
-  letter-spacing: 0.04em;
+.step:nth-child(1) .step-circ { border-color: rgba(124,111,247,0.45); }
+.step:nth-child(2) .step-circ { border-color: rgba(42,191,204,0.45); }
+.step:nth-child(3) .step-circ { border-color: rgba(232,112,92,0.45); }
+.step:nth-child(4) .step-circ { border-color: rgba(245,168,32,0.45); }
+.step:nth-child(5) .step-circ { border-color: rgba(54,200,124,0.45); }
+.step-n {
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400;
+  color: rgba(255,255,255,0.38);
 }
-.step-desc {
-  font-size: 12px; color: rgba(255,255,255,0.35);
-  line-height: 1.8; font-weight: 300;
-}
-.step-arrow {
-  position: absolute; right: -1px; top: 50%;
-  transform: translateY(-50%);
-  width: 0; height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid var(--accent);
-  z-index: 2;
-}
-.step:last-child .step-arrow { display: none; }
+.step-title { font-size: 13px; color: #fff; font-weight: 500; margin-bottom: 10px; letter-spacing: 0.04em; }
+.step-desc { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.85; font-weight: 300; }
 
-/* ===== FEATURES ===== */
-.features { background: #fff; padding: 88px 56px; }
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 52px;
-}
-.feature-item { padding: 0; }
-.feature-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px; color: var(--silver-mid);
-  font-weight: 600; line-height: 1;
-  margin-bottom: 16px;
-}
-.feature-title {
-  font-size: 15px; color: var(--ink);
-  font-weight: 500; margin-bottom: 10px;
-  letter-spacing: 0.04em;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--silver-mid);
-}
-.feature-text { font-size: 13px; color: var(--text-muted); line-height: 1.9; font-weight: 300; }
+/* ===== WHY ===== */
+.why { background: #fff; padding: 100px 60px; }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 52px; margin-top: 56px; }
+.why-item { padding-top: 28px; position: relative; }
+.why-item::before { content: ''; position: absolute; top: 0; left: 0; width: 40px; height: 2px; }
+.why-item:nth-child(1)::before { background: var(--g-violet); }
+.why-item:nth-child(2)::before { background: var(--g-teal); }
+.why-item:nth-child(3)::before { background: var(--g-coral); }
+.why-num { font-family: 'Cormorant Garamond', serif; font-size: 44px; color: var(--silver-mid); font-weight: 600; line-height: 1; margin-bottom: 14px; }
+.why-title { font-size: 15px; color: var(--ink); font-weight: 500; margin-bottom: 10px; letter-spacing: 0.04em; }
+.why-text { font-size: 13px; color: var(--muted); line-height: 2; font-weight: 300; }
 
 /* ===== ABOUT ===== */
 .about {
-  background: var(--silver);
-  padding: 88px 56px;
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 72px; align-items: center;
+  background: var(--silver); padding: 100px 60px;
+  display: grid; grid-template-columns: 1fr 360px;
+  gap: 72px; align-items: start; position: relative; overflow: hidden;
 }
-.about-info { }
-.about-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 26px; color: var(--ink);
-  font-weight: 600; line-height: 1.5;
-  margin-bottom: 20px;
+.about::after {
+  content: ''; position: absolute; right: -60px; top: 50%; transform: translateY(-50%);
+  width: 300px; height: 300px; border-radius: 50%;
+  background: conic-gradient(var(--g-violet), var(--g-teal), var(--g-coral), var(--g-amber), var(--g-rose), var(--g-violet));
+  opacity: 0.05; pointer-events: none;
 }
-.about-body {
-  font-size: 14px; color: var(--text-muted);
-  line-height: 2; font-weight: 300; margin-bottom: 32px;
-}
-.about-table { width: 100%; }
+.about-title { font-family: 'Noto Serif JP', serif; font-size: 28px; color: var(--ink); font-weight: 600; line-height: 1.5; margin-bottom: 20px; }
+.about-body { font-size: 14px; color: var(--muted); line-height: 2.1; font-weight: 300; margin-bottom: 36px; }
+.about-table { width: 100%; border-collapse: collapse; }
 .about-table tr { border-bottom: 1px solid var(--silver-mid); }
 .about-table td { padding: 14px 0; font-size: 13px; vertical-align: top; }
-.about-table td:first-child {
-  color: var(--text-muted); width: 100px; font-weight: 400;
-  letter-spacing: 0.04em;
-}
+.about-table td:first-child { color: var(--faint); width: 88px; letter-spacing: 0.06em; }
 .about-table td:last-child { color: var(--ink); font-weight: 500; }
-.about-card {
-  background: var(--ink);
-  padding: 40px 36px;
-}
-.about-card-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px; letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.3);
-  text-transform: uppercase;
-  margin-bottom: 28px;
-}
-.about-stat { margin-bottom: 28px; }
-.about-stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px; font-weight: 600;
-  color: #fff; line-height: 1;
-  margin-bottom: 4px;
-}
-.about-stat-num span { font-size: 22px; color: var(--accent-light); }
-.about-stat-label { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; }
-.about-divider { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 28px; }
+.about-stats { background: var(--ink); padding: 44px 36px; position: sticky; top: 84px; }
+.stats-label { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.22em; color: rgba(255,255,255,0.22); text-transform: uppercase; margin-bottom: 32px; }
+.stat { margin-bottom: 32px; }
+.stat:last-child { margin-bottom: 0; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 600; color: #fff; line-height: 1; margin-bottom: 4px; }
+.stat-num sup { font-size: 22px; color: var(--accent-light); vertical-align: super; }
+.stat-lbl { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 0.1em; }
+.stat-div { height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 32px; }
+.about-stats::before { content: ''; display: block; height: 2px; background: linear-gradient(to right, var(--accent), var(--g-teal)); margin-bottom: 44px; margin-left: -36px; margin-right: -36px; margin-top: -44px; }
 
 /* ===== CONTACT ===== */
-.contact { background: var(--ink); padding: 88px 56px; }
-.contact .section-label { color: var(--accent-light); }
-.contact .section-label::before { background: var(--accent-light); }
-.contact .section-title { color: #fff; }
-.contact-inner {
+.contact { background: var(--ink-mid); padding: 100px 60px; position: relative; overflow: hidden; }
+.contact::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 15% 80%, rgba(42,191,204,0.06) 0%, transparent 45%),
+              radial-gradient(ellipse at 85% 20%, rgba(124,111,247,0.08) 0%, transparent 45%);
+}
+.contact-grid {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 72px; margin-top: 52px;
+  gap: 80px; margin-top: 52px; position: relative; z-index: 1;
 }
-.contact-left { }
-.contact-intro { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 2; font-weight: 300; margin-bottom: 40px; }
-.contact-detail { display: flex; flex-direction: column; gap: 0; }
-.cdetail {
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  display: flex; gap: 20px; align-items: center;
-}
-.cdetail:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
-.cdetail-label { font-size: 11px; color: rgba(255,255,255,0.25); width: 80px; letter-spacing: 0.1em; }
-.cdetail-val { font-size: 14px; color: rgba(255,255,255,0.7); font-weight: 400; }
-.contact-form { display: flex; flex-direction: column; gap: 18px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-label { font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); font-weight: 400; }
-.form-input, .form-select, .form-textarea {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 12px 14px;
-  font-family: 'Noto Sans JP', sans-serif;
+.contact-intro { font-size: 14px; color: rgba(255,255,255,0.38); line-height: 2.1; font-weight: 300; margin-bottom: 44px; }
+.cdetail { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; gap: 20px; align-items: baseline; }
+.cdetail:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+.cdlabel { font-size: 10px; color: rgba(255,255,255,0.2); width: 72px; letter-spacing: 0.12em; flex-shrink: 0; }
+.cdval { font-size: 13px; color: rgba(255,255,255,0.62); }
+.cform { display: flex; flex-direction: column; gap: 16px; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.fg { display: flex; flex-direction: column; gap: 6px; }
+.flabel { font-size: 10px; letter-spacing: 0.12em; color: rgba(255,255,255,0.28); }
+.finput, .fsel, .ftxt {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 14px; font-family: 'Noto Sans JP', sans-serif;
   font-size: 14px; color: rgba(255,255,255,0.8);
-  outline: none; transition: border-color 0.2s;
-  appearance: none; -webkit-appearance: none;
-  border-radius: 0;
+  outline: none; transition: border-color 0.2s, background 0.2s;
+  -webkit-appearance: none; border-radius: 0;
 }
-.form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.2); }
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--accent-light);
-  background: rgba(108,92,231,0.08);
-}
-.form-select option { background: var(--ink-soft); color: #fff; }
-.form-textarea { resize: vertical; min-height: 100px; }
-.form-submit {
+.finput::placeholder, .ftxt::placeholder { color: rgba(255,255,255,0.16); }
+.finput:focus, .fsel:focus, .ftxt:focus { border-color: var(--accent); background: rgba(124,111,247,0.07); }
+.fsel option { background: var(--ink-soft); }
+.ftxt { resize: vertical; min-height: 108px; line-height: 1.7; }
+.fsub {
   background: var(--accent); color: #fff; border: none;
   padding: 15px; font-family: 'Noto Sans JP', sans-serif;
-  font-size: 14px; cursor: pointer;
-  letter-spacing: 0.1em; font-weight: 500;
-  border-radius: 2px; transition: background 0.2s; margin-top: 4px;
+  font-size: 13px; cursor: pointer; letter-spacing: 0.12em; font-weight: 500;
+  border-radius: 2px; transition: all 0.25s; margin-top: 4px;
 }
-.form-submit:hover { background: var(--accent-light); }
+.fsub:hover { background: var(--accent-light); box-shadow: 0 4px 24px var(--accent-glow); transform: translateY(-1px); }
 
 /* ===== FOOTER ===== */
 footer {
-  background: rgba(8,8,12,1);
-  padding: 28px 56px;
+  background: rgba(4,4,10,1); padding: 28px 60px;
   display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
-.footer-logo-en {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px; font-weight: 600;
-  color: rgba(255,255,255,0.5); letter-spacing: 0.12em;
+.ft-en { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: rgba(255,255,255,0.36); letter-spacing: 0.2em; }
+.ft-ja { font-size: 10px; color: rgba(255,255,255,0.16); margin-top: 3px; letter-spacing: 0.15em; }
+.ft-copy { font-size: 11px; color: rgba(255,255,255,0.16); letter-spacing: 0.08em; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-left { padding: 64px 24px; }
+  .hero-title { font-size: 32px; }
+  .tagline-strip { padding: 18px 24px; flex-direction: column; gap: 8px; }
+  .concept { grid-template-columns: 1fr; gap: 40px; padding: 64px 24px; }
+  .services { padding: 64px 24px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .approach { padding: 64px 24px; }
+  .approach-track { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .approach-track::before { display: none; }
+  .why { padding: 64px 24px; }
+  .why-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about { grid-template-columns: 1fr; padding: 64px 24px; }
+  .about-stats { position: static; }
+  .contact { padding: 64px 24px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
 }
-.footer-logo-ja { font-size: 11px; color: rgba(255,255,255,0.2); margin-top: 2px; letter-spacing: 0.15em; }
-.footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.06em; }
 </style>
 </head>
 <body>
@@ -542,11 +465,17 @@ footer {
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <div class="nav-logo-dot"></div>
+    <div class="nav-mark">
+      <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="15,2 26,8.5 26,21.5 15,28 4,21.5 4,8.5" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+        <polygon points="15,7 22.5,11.25 22.5,18.75 15,23 7.5,18.75 7.5,11.25" fill="none" stroke="rgba(124,111,247,0.45)" stroke-width="1"/>
+        <circle cx="15" cy="15" r="2.8" fill="#7C6FF7"/>
+      </svg>
+    </div>
     <div>
       <div class="nav-logo-en">KALEIDO</div>
+      <div class="nav-logo-ja">株式会社カレイド</div>
     </div>
-    <div class="nav-logo-ja">株式会社カレイド</div>
   </div>
   <div class="nav-links">
     <a href="#services">サービス</a>
@@ -558,50 +487,219 @@ footer {
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">
-      <div class="hero-eyebrow-line"></div>
-      <div class="hero-eyebrow-text">Management Consulting</div>
+    <div class="eyebrow">
+      <div class="eyebrow-bar"></div>
+      <div class="eyebrow-text">Management Consulting</div>
     </div>
     <h1 class="hero-title">
-      貴社だけの<span class="accent">唯一の形</span>で、<br>
-      経営の多面を<span class="accent">解き放つ</span>。
+      貴社だけの<br>
+      <span class="hi">唯一の形</span>で、<br>
+      経営の多面を<br>解き放つ。
     </h1>
-    <div class="hero-subtitle-en">No two patterns alike — just like a kaleidoscope.</div>
+    <div class="hero-sub">No two patterns alike — just like a kaleidoscope.</div>
     <p class="hero-desc">
       経営戦略・人事・マーケティング・AI活用まで、<br>
       カレイドは多面的な専門性で貴社の成長に伴走します。<br>
-      同じ形の支援は一つとしてありません。
+      同じ形の支援は、一つとしてありません。
     </p>
     <div class="hero-actions">
       <button class="btn-primary">サービスを見る</button>
       <button class="btn-ghost">無料相談をする</button>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="kaleido-wrap">
-      <div class="kaleido-ring"></div>
-      <div class="kaleido-ring"></div>
-      <div class="kaleido-ring"></div>
-      <div class="kaleido-center">
-        <div class="k-logo-big">K</div>
-      </div>
-    </div>
-    <div class="hero-right-label">Kaleidoscope · 万華鏡</div>
-  </div>
-</div>
 
-<!-- TAGLINE BAND -->
-<div class="tagline-band">
-  <div class="tagline-text">"Beautiful forms, endlessly unique."</div>
+  <div class="hero-right">
+    <div class="hero-right-glow"></div>
+    <!-- Kaleidoscope Mandala -->
+    <svg class="kaleido-svg" viewBox="-220 -220 440 440" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="rg-v" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#7C6FF7" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#7C6FF7" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#7C6FF7" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#7C6FF7" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg-t" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#2ABFCC" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#2ABFCC" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#2ABFCC" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#2ABFCC" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg-c" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#E8705C" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#E8705C" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#E8705C" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#E8705C" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg-a" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#F5A820" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#F5A820" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#F5A820" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#F5A820" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg-r" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#D0588A" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#D0588A" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#D0588A" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#D0588A" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg-b" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#4A8AEC" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#4A8AEC" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#4A8AEC" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#4A8AEC" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg-e" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#36C87C" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#36C87C" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#36C87C" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#36C87C" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="rg-g" cx="0" cy="0" r="168" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#C89040" stop-opacity="0"/>
+          <stop offset="35%"  stop-color="#C89040" stop-opacity="0.55"/>
+          <stop offset="80%"  stop-color="#C89040" stop-opacity="0.7"/>
+          <stop offset="100%" stop-color="#C89040" stop-opacity="0"/>
+        </radialGradient>
+        <!-- inner ring gradients -->
+        <radialGradient id="ri-v" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#7C6FF7" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#7C6FF7" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#7C6FF7" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="ri-t" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#2ABFCC" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#2ABFCC" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#2ABFCC" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="ri-c" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#E8705C" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#E8705C" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#E8705C" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="ri-a" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#F5A820" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#F5A820" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#F5A820" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="ri-r" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#D0588A" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#D0588A" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#D0588A" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="ri-b" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#4A8AEC" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#4A8AEC" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#4A8AEC" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="ri-e" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#36C87C" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#36C87C" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#36C87C" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="ri-g" cx="0" cy="0" r="95" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#C89040" stop-opacity="0"/>
+          <stop offset="40%"  stop-color="#C89040" stop-opacity="0.35"/>
+          <stop offset="100%" stop-color="#C89040" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- Dark base circle -->
+      <circle cx="0" cy="0" r="200" fill="rgba(7,7,15,0.6)"/>
+
+      <!-- Outer 8 segments, rotating -->
+      <!-- 45° each: points at 0°(168,0) 45°(118.8,118.8) 90°(0,168) 135°(-118.8,118.8)
+           180°(-168,0) 225°(-118.8,-118.8) 270°(0,-168) 315°(118.8,-118.8) -->
+      <g class="mg mg-outer">
+        <path d="M0 0 L168 0 A168 168 0 0 1 118.8 118.8 Z"     fill="url(#rg-v)"/>
+        <path d="M0 0 L118.8 118.8 A168 168 0 0 1 0 168 Z"     fill="url(#rg-t)"/>
+        <path d="M0 0 L0 168 A168 168 0 0 1 -118.8 118.8 Z"   fill="url(#rg-c)"/>
+        <path d="M0 0 L-118.8 118.8 A168 168 0 0 1 -168 0 Z"  fill="url(#rg-a)"/>
+        <path d="M0 0 L-168 0 A168 168 0 0 1 -118.8 -118.8 Z" fill="url(#rg-r)"/>
+        <path d="M0 0 L-118.8 -118.8 A168 168 0 0 1 0 -168 Z" fill="url(#rg-b)"/>
+        <path d="M0 0 L0 -168 A168 168 0 0 1 118.8 -118.8 Z"  fill="url(#rg-e)"/>
+        <path d="M0 0 L118.8 -118.8 A168 168 0 0 1 168 0 Z"   fill="url(#rg-g)"/>
+      </g>
+
+      <!-- Inner 8 segments, counter-rotating -->
+      <!-- radius 95: 45° pt = (67.2, 67.2) -->
+      <g class="mg mg-inner">
+        <path d="M0 0 L95 0 A95 95 0 0 1 67.2 67.2 Z"    fill="url(#ri-g)"/>
+        <path d="M0 0 L67.2 67.2 A95 95 0 0 1 0 95 Z"    fill="url(#ri-e)"/>
+        <path d="M0 0 L0 95 A95 95 0 0 1 -67.2 67.2 Z"   fill="url(#ri-b)"/>
+        <path d="M0 0 L-67.2 67.2 A95 95 0 0 1 -95 0 Z"  fill="url(#ri-r)"/>
+        <path d="M0 0 L-95 0 A95 95 0 0 1 -67.2 -67.2 Z" fill="url(#ri-a)"/>
+        <path d="M0 0 L-67.2 -67.2 A95 95 0 0 1 0 -95 Z" fill="url(#ri-c)"/>
+        <path d="M0 0 L0 -95 A95 95 0 0 1 67.2 -67.2 Z"  fill="url(#ri-t)"/>
+        <path d="M0 0 L67.2 -67.2 A95 95 0 0 1 95 0 Z"   fill="url(#ri-v)"/>
+      </g>
+
+      <!-- Concentric rings -->
+      <circle cx="0" cy="0" r="168" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+      <circle cx="0" cy="0" r="130" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+      <circle cx="0" cy="0" r="95"  fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+      <!-- Spoke lines -->
+      <g class="mg mg-spokes" stroke="rgba(255,255,255,0.05)" stroke-width="1">
+        <line x1="0" y1="0" x2="168" y2="0"/>
+        <line x1="0" y1="0" x2="118.8" y2="118.8"/>
+        <line x1="0" y1="0" x2="0" y2="168"/>
+        <line x1="0" y1="0" x2="-118.8" y2="118.8"/>
+        <line x1="0" y1="0" x2="-168" y2="0"/>
+        <line x1="0" y1="0" x2="-118.8" y2="-118.8"/>
+        <line x1="0" y1="0" x2="0" y2="-168"/>
+        <line x1="0" y1="0" x2="118.8" y2="-118.8"/>
+      </g>
+
+      <!-- Gem diamonds at outer ring intersections -->
+      <g class="mg mg-deco">
+        <g transform="rotate(0)">  <polygon points="168,0 174,6 180,0 174,-6" fill="rgba(124,111,247,0.7)"/></g>
+        <g transform="rotate(45)"> <polygon points="168,0 174,6 180,0 174,-6" fill="rgba(42,191,204,0.7)"/></g>
+        <g transform="rotate(90)"> <polygon points="168,0 174,6 180,0 174,-6" fill="rgba(232,112,92,0.7)"/></g>
+        <g transform="rotate(135)"><polygon points="168,0 174,6 180,0 174,-6" fill="rgba(245,168,32,0.7)"/></g>
+        <g transform="rotate(180)"><polygon points="168,0 174,6 180,0 174,-6" fill="rgba(208,88,138,0.7)"/></g>
+        <g transform="rotate(225)"><polygon points="168,0 174,6 180,0 174,-6" fill="rgba(74,138,236,0.7)"/></g>
+        <g transform="rotate(270)"><polygon points="168,0 174,6 180,0 174,-6" fill="rgba(54,200,124,0.7)"/></g>
+        <g transform="rotate(315)"><polygon points="168,0 174,6 180,0 174,-6" fill="rgba(200,144,64,0.7)"/></g>
+      </g>
+
+      <!-- Center dark circle -->
+      <circle cx="0" cy="0" r="38" fill="rgba(7,7,15,0.92)"/>
+      <circle cx="0" cy="0" r="38" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+      <!-- K lettermark -->
+      <text x="0" y="10"
+        font-family="Cormorant Garamond, serif"
+        font-size="30" font-weight="600"
+        fill="rgba(255,255,255,0.65)"
+        text-anchor="middle">K</text>
+
+      <!-- Pulsing center dot -->
+      <circle cx="0" cy="0" r="4" fill="#7C6FF7">
+        <animate attributeName="r" values="4;7;4" dur="2.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.3;1" dur="2.8s" repeatCount="indefinite"/>
+      </circle>
+    </svg>
+
+    <div class="hero-tag">Kaleidoscope · 万華鏡</div>
+  </div>
+</section>
+
+<!-- PRISM -->
+<div class="prism"></div>
+
+<!-- TAGLINE -->
+<div class="tagline-strip">
+  <div class="tagline-en">"Beautiful forms, endlessly unique."</div>
   <div class="tagline-ja">kalos（美しい）× eidos（形態）— 二度と同じ形にはならない。</div>
 </div>
 
 <!-- CONCEPT -->
 <section class="concept">
   <div>
-    <div class="concept-label">Our Concept</div>
+    <div class="sec-label">Our Concept</div>
     <h2 class="concept-title">なぜ、<em>カレイド</em>なのか。</h2>
     <p class="concept-body">
       万華鏡が同じ形を二度と見せないように、<br>
@@ -611,11 +709,11 @@ footer {
       企業の可能性を多面的に引き出す——それがカレイドです。
     </p>
   </div>
-  <div class="concept-etymology">
+  <div class="etym-card">
     <div class="etym-word">Kaleido</div>
-    <div class="etym-parts">
-      <div class="etym-part kalos">kalos<span class="etym-part-label">美しい（ギリシャ語）</span></div>
-      <div class="etym-part eidos">eidos<span class="etym-part-label">形態（ギリシャ語）</span></div>
+    <div class="etym-pills">
+      <div class="etym-pill kalos">kalos<span class="etym-pill-sub">美しい（ギリシャ語）</span></div>
+      <div class="etym-pill eidos">eidos<span class="etym-pill-sub">形態（ギリシャ語）</span></div>
     </div>
     <p class="etym-desc">
       「Kaleido」はギリシャ語の <strong>kalos（美しい）</strong> と <strong>eidos（形態）</strong> を語源とする接頭辞。
@@ -626,134 +724,130 @@ footer {
   </div>
 </section>
 
+<!-- PRISM -->
+<div class="prism"></div>
+
 <!-- SERVICES -->
 <section class="services" id="services">
-  <div class="section-header">
-    <div class="section-label">Services</div>
-    <h2 class="section-title">支援領域</h2>
-    <p class="section-desc">経営の全領域にわたる専門チームが、貴社の課題に応じてベストな組み合わせで対応します。</p>
-  </div>
-  <div class="services-hub">
-    <div class="service-card core" style="grid-column: span 1;">
-      <div class="service-swatch"></div>
-      <div class="service-name">経営戦略</div>
-      <span class="service-name-en">Management Strategy</span>
-      <p class="service-text">全ての支援領域を束ねるコアドメイン。経営の方向性を定め、実行可能な戦略へと落とし込みます。</p>
-      <div class="service-num">00</div>
+  <div class="sec-label">Services</div>
+  <h2 class="sec-title">支援領域</h2>
+  <p class="sec-desc">経営の全領域にわたる専門チームが、貴社の課題に応じてベストな組み合わせで対応します。</p>
+  <div class="services-grid">
+    <div class="svc svc-core">
+      <div class="svc-dot"></div>
+      <div class="svc-name">経営戦略</div>
+      <span class="svc-en">Management Strategy</span>
+      <p class="svc-text">全ての支援領域を束ねるコアドメイン。経営の方向性を定め、実行可能な戦略へと落とし込みます。</p>
+      <div class="svc-num">00</div>
     </div>
-    <div class="service-card s1">
-      <div class="service-swatch"></div>
-      <div class="service-name">人事・組織</div>
-      <span class="service-name-en">HR & Organization</span>
-      <p class="service-text">採用・評価・組織設計・人材育成。人的資本経営の実践を支援します。</p>
-      <div class="service-num">01</div>
+    <div class="svc svc-1">
+      <div class="svc-dot"></div>
+      <div class="svc-name">人事・組織</div>
+      <span class="svc-en">HR &amp; Organization</span>
+      <p class="svc-text">採用・評価・組織設計・人材育成。人的資本経営の実践を支援します。</p>
+      <div class="svc-num">01</div>
     </div>
-    <div class="service-card s2">
-      <div class="service-swatch"></div>
-      <div class="service-name">マーケティング</div>
-      <span class="service-name-en">Marketing</span>
-      <p class="service-text">顧客獲得・LTV向上・デジタルマーケティング戦略の設計と実行支援。</p>
-      <div class="service-num">02</div>
+    <div class="svc svc-2">
+      <div class="svc-dot"></div>
+      <div class="svc-name">マーケティング</div>
+      <span class="svc-en">Marketing</span>
+      <p class="svc-text">顧客獲得・LTV向上・デジタルマーケティング戦略の設計と実行支援。</p>
+      <div class="svc-num">02</div>
     </div>
-    <div class="service-card s3">
-      <div class="service-swatch"></div>
-      <div class="service-name">ブランディング</div>
-      <span class="service-name-en">Branding</span>
-      <p class="service-text">企業・サービスブランドの構築。VI設計からブランド浸透まで一貫支援。</p>
-      <div class="service-num">03</div>
+    <div class="svc svc-3">
+      <div class="svc-dot"></div>
+      <div class="svc-name">ブランディング</div>
+      <span class="svc-en">Branding</span>
+      <p class="svc-text">企業・サービスブランドの構築。VI設計からブランド浸透まで一貫支援。</p>
+      <div class="svc-num">03</div>
     </div>
-    <div class="service-card s4">
-      <div class="service-swatch"></div>
-      <div class="service-name">広報PR</div>
-      <span class="service-name-en">Public Relations</span>
-      <p class="service-text">メディア戦略・プレスリリース・SNS広報。パブリックイメージの最大化。</p>
-      <div class="service-num">04</div>
+    <div class="svc svc-4">
+      <div class="svc-dot"></div>
+      <div class="svc-name">広報PR</div>
+      <span class="svc-en">Public Relations</span>
+      <p class="svc-text">メディア戦略・プレスリリース・SNS広報。パブリックイメージの最大化。</p>
+      <div class="svc-num">04</div>
     </div>
-    <div class="service-card s5">
-      <div class="service-swatch"></div>
-      <div class="service-name">AI活用</div>
-      <span class="service-name-en">AI Integration</span>
-      <p class="service-text">業務へのAI導入・プロンプト設計・自動化ワークフロー構築で生産性を革新。</p>
-      <div class="service-num">05</div>
+    <div class="svc svc-5">
+      <div class="svc-dot"></div>
+      <div class="svc-name">AI活用</div>
+      <span class="svc-en">AI Integration</span>
+      <p class="svc-text">業務へのAI導入・プロンプト設計・自動化ワークフロー構築で生産性を革新。</p>
+      <div class="svc-num">05</div>
     </div>
-    <div class="service-card s6">
-      <div class="service-swatch"></div>
-      <div class="service-name">DX</div>
-      <span class="service-name-en">Digital Transformation</span>
-      <p class="service-text">デジタル化戦略・ツール選定・社内定着まで、DX推進を伴走支援。</p>
-      <div class="service-num">06</div>
+    <div class="svc svc-6">
+      <div class="svc-dot"></div>
+      <div class="svc-name">DX</div>
+      <span class="svc-en">Digital Transformation</span>
+      <p class="svc-text">デジタル化戦略・ツール選定・社内定着まで、DX推進を伴走支援。</p>
+      <div class="svc-num">06</div>
     </div>
-    <div class="service-card s7">
-      <div class="service-swatch"></div>
-      <div class="service-name">M&A / PMI</div>
-      <span class="service-name-en">M&A · Post-Merger</span>
-      <p class="service-text">M&A戦略・デューデリジェンス・PMI（統合後マネジメント）の実行支援。</p>
-      <div class="service-num">07</div>
+    <div class="svc svc-7">
+      <div class="svc-dot"></div>
+      <div class="svc-name">M&amp;A / PMI</div>
+      <span class="svc-en">M&amp;A · Post-Merger</span>
+      <p class="svc-text">M&amp;A戦略・デューデリジェンス・PMI（統合後マネジメント）の実行支援。</p>
+      <div class="svc-num">07</div>
     </div>
   </div>
 </section>
 
+<!-- PRISM -->
+<div class="prism"></div>
+
 <!-- APPROACH -->
 <section class="approach" id="approach">
-  <div class="section-header">
-    <div class="section-label">Our Approach</div>
-    <h2 class="section-title" style="color:#fff;">カレイドのアプローチ</h2>
-    <p class="section-desc" style="color:rgba(255,255,255,0.4);">課題の表面ではなく本質に向き合い、戦略から実行まで一貫して伴走します。</p>
-  </div>
-  <div class="approach-steps">
+  <div class="sec-label light">Our Approach</div>
+  <h2 class="sec-title" style="color:#fff;">カレイドのアプローチ</h2>
+  <p class="sec-desc" style="color:rgba(255,255,255,0.35);">課題の表面ではなく本質に向き合い、戦略から実行まで一貫して伴走します。</p>
+  <div class="approach-track">
     <div class="step">
-      <div class="step-num">01</div>
+      <div class="step-circ"><span class="step-n">01</span></div>
       <div class="step-title">ヒアリング・診断</div>
       <p class="step-desc">経営課題・組織状態・市場環境を深くヒアリングし、本質的な問いを設定します。</p>
-      <div class="step-arrow"></div>
     </div>
     <div class="step">
-      <div class="step-num">02</div>
+      <div class="step-circ"><span class="step-n">02</span></div>
       <div class="step-title">戦略設計</div>
       <p class="step-desc">貴社固有の状況に合わせたオーダーメイドの戦略・施策ロードマップを策定。</p>
-      <div class="step-arrow"></div>
     </div>
     <div class="step">
-      <div class="step-num">03</div>
+      <div class="step-circ"><span class="step-n">03</span></div>
       <div class="step-title">チーム編成</div>
       <p class="step-desc">必要な専門性を持つコンサルタント・フリーランスを最適に組み合わせます。</p>
-      <div class="step-arrow"></div>
     </div>
     <div class="step">
-      <div class="step-num">04</div>
+      <div class="step-circ"><span class="step-n">04</span></div>
       <div class="step-title">実行支援</div>
       <p class="step-desc">計画倒れにならないよう、施策実行を現場レベルまで伴走してサポート。</p>
-      <div class="step-arrow"></div>
     </div>
     <div class="step">
-      <div class="step-num">05</div>
+      <div class="step-circ"><span class="step-n">05</span></div>
       <div class="step-title">効果検証・改善</div>
       <p class="step-desc">定量・定性の両面で成果を検証し、次の打ち手へとつなげます。</p>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="section-header">
-    <div class="section-label">Why Kaleido</div>
-    <h2 class="section-title">選ばれる理由</h2>
-  </div>
-  <div class="features-grid">
-    <div class="feature-item">
-      <div class="feature-num">01</div>
-      <div class="feature-title">オーダーメイドの支援設計</div>
-      <p class="feature-text">業界標準のテンプレートではなく、貴社の状況・フェーズ・カルチャーに合わせてゼロから支援を設計します。二度と同じ形にはならない——それがカレイドの流儀です。</p>
+<!-- WHY -->
+<section class="why">
+  <div class="sec-label">Why Kaleido</div>
+  <h2 class="sec-title">選ばれる理由</h2>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-num">01</div>
+      <div class="why-title">オーダーメイドの支援設計</div>
+      <p class="why-text">業界標準のテンプレートではなく、貴社の状況・フェーズ・カルチャーに合わせてゼロから支援を設計します。二度と同じ形にはならない——それがカレイドの流儀です。</p>
     </div>
-    <div class="feature-item">
-      <div class="feature-num">02</div>
-      <div class="feature-title">多領域をカバーする専門チーム</div>
-      <p class="feature-text">経営戦略からAI・M&Aまで、8つの専門ドメインを一社でカバー。複合的な課題にも、最適なチームを素早く編成して対応します。</p>
+    <div class="why-item">
+      <div class="why-num">02</div>
+      <div class="why-title">多領域をカバーする専門チーム</div>
+      <p class="why-text">経営戦略からAI・M&amp;Aまで、8つの専門ドメインを一社でカバー。複合的な課題にも、最適なチームを素早く編成して対応します。</p>
     </div>
-    <div class="feature-item">
-      <div class="feature-num">03</div>
-      <div class="feature-title">戦略から実行まで一貫伴走</div>
-      <p class="feature-text">「提言で終わり」にしません。策定した戦略の実行フェーズまで責任を持って伴走し、現場に根付く成果を共に創ります。</p>
+    <div class="why-item">
+      <div class="why-num">03</div>
+      <div class="why-title">戦略から実行まで一貫伴走</div>
+      <p class="why-text">「提言で終わり」にしません。策定した戦略の実行フェーズまで責任を持って伴走し、現場に根付く成果を共に創ります。</p>
     </div>
   </div>
 </section>
@@ -761,11 +855,9 @@ footer {
 <!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-info">
-    <div class="section-label" style="display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;font-weight:500;margin-bottom:14px;"><span style="width:20px;height:1px;background:var(--accent);display:inline-block;"></span>Company</div>
+    <div class="sec-label">Company</div>
     <h2 class="about-title">会社概要</h2>
-    <p class="about-body">
-      株式会社カレイドは、経営戦略を基軸に人事・マーケティング・AI活用まで多面的な支援を提供するコンサルティングファームです。万華鏡のように変幻し、貴社だけの形を共に創ります。
-    </p>
+    <p class="about-body">株式会社カレイドは、経営戦略を基軸に人事・マーケティング・AI活用まで多面的な支援を提供するコンサルティングファームです。万華鏡のように変幻し、貴社だけの形を共に創ります。</p>
     <table class="about-table">
       <tr><td>会社名</td><td>株式会社カレイド</td></tr>
       <tr><td>英字表記</td><td>Kaleido Inc.</td></tr>
@@ -775,73 +867,64 @@ footer {
       <tr><td>事業内容</td><td>経営コンサルティング、人事・マーケティング支援、AI・DX推進支援、M&A/PMI支援</td></tr>
     </table>
   </div>
-  <div class="about-card">
-    <div class="about-card-title">Track Record</div>
-    <div class="about-stat">
-      <div class="about-stat-num">200<span>+</span></div>
-      <div class="about-stat-label">累計支援企業数</div>
+  <div class="about-stats">
+    <div class="stats-label">Track Record</div>
+    <div class="stat">
+      <div class="stat-num">200<sup>+</sup></div>
+      <div class="stat-lbl">累計支援企業数</div>
     </div>
-    <div class="about-divider"></div>
-    <div class="about-stat">
-      <div class="about-stat-num">8<span>領域</span></div>
-      <div class="about-stat-label">専門支援ドメイン</div>
+    <div class="stat-div"></div>
+    <div class="stat">
+      <div class="stat-num">8<sup>領域</sup></div>
+      <div class="stat-lbl">専門支援ドメイン</div>
     </div>
-    <div class="about-divider"></div>
-    <div class="about-stat">
-      <div class="about-stat-num">95<span>%</span></div>
-      <div class="about-stat-label">顧客継続率</div>
+    <div class="stat-div"></div>
+    <div class="stat">
+      <div class="stat-num">95<sup>%</sup></div>
+      <div class="stat-lbl">顧客継続率</div>
     </div>
   </div>
 </section>
 
+<!-- PRISM -->
+<div class="prism"></div>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="section-label" style="display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;color:var(--accent-light);text-transform:uppercase;font-weight:500;margin-bottom:14px;"><span style="width:20px;height:1px;background:var(--accent-light);display:inline-block;"></span>Contact</div>
-  <h2 class="section-title" style="font-family:'Noto Serif JP',serif;font-size:26px;color:#fff;font-weight:600;line-height:1.4;margin-bottom:0;">お問い合わせ</h2>
-  <div class="contact-inner">
-    <div class="contact-left">
+  <div class="sec-label light" style="position:relative;z-index:1;">Contact</div>
+  <h2 class="sec-title" style="color:#fff;position:relative;z-index:1;">お問い合わせ</h2>
+  <div class="contact-grid">
+    <div>
       <p class="contact-intro">
         ご相談・お見積もりは無料です。<br>
         まずはお気軽にお声がけください。<br>
         担当コンサルタントより2営業日以内にご連絡いたします。
       </p>
-      <div class="contact-detail">
-        <div class="cdetail">
-          <div class="cdetail-label">Email</div>
-          <div class="cdetail-val">info@kaleido-consulting.co.jp</div>
-        </div>
-        <div class="cdetail">
-          <div class="cdetail-label">Tel</div>
-          <div class="cdetail-val">03-XXXX-XXXX</div>
-        </div>
-        <div class="cdetail">
-          <div class="cdetail-label">受付時間</div>
-          <div class="cdetail-val">平日 10:00 – 18:00</div>
-        </div>
-        <div class="cdetail">
-          <div class="cdetail-label">所在地</div>
-          <div class="cdetail-val">東京都【区市町村・番地】</div>
-        </div>
+      <div>
+        <div class="cdetail"><div class="cdlabel">Email</div><div class="cdval">info@kaleido-consulting.co.jp</div></div>
+        <div class="cdetail"><div class="cdlabel">Tel</div><div class="cdval">03-XXXX-XXXX</div></div>
+        <div class="cdetail"><div class="cdlabel">受付時間</div><div class="cdval">平日 10:00 – 18:00</div></div>
+        <div class="cdetail"><div class="cdlabel">所在地</div><div class="cdval">東京都【区市町村・番地】</div></div>
       </div>
     </div>
-    <div class="contact-form">
-      <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">お名前 *</label>
-          <input type="text" class="form-input" placeholder="山田 太郎">
+    <form class="cform" onsubmit="return false;">
+      <div class="frow">
+        <div class="fg">
+          <label class="flabel">お名前 *</label>
+          <input type="text" class="finput" placeholder="山田 太郎">
         </div>
-        <div class="form-group">
-          <label class="form-label">会社名</label>
-          <input type="text" class="form-input" placeholder="株式会社〇〇">
+        <div class="fg">
+          <label class="flabel">会社名</label>
+          <input type="text" class="finput" placeholder="株式会社〇〇">
         </div>
       </div>
-      <div class="form-group">
-        <label class="form-label">メールアドレス *</label>
-        <input type="email" class="form-input" placeholder="taro@example.com">
+      <div class="fg">
+        <label class="flabel">メールアドレス *</label>
+        <input type="email" class="finput" placeholder="taro@example.com">
       </div>
-      <div class="form-group">
-        <label class="form-label">ご相談領域</label>
-        <select class="form-select">
+      <div class="fg">
+        <label class="flabel">ご相談領域</label>
+        <select class="fsel">
           <option>経営戦略</option>
           <option>人事・組織</option>
           <option>マーケティング</option>
@@ -849,26 +932,26 @@ footer {
           <option>広報PR</option>
           <option>AI活用</option>
           <option>DX</option>
-          <option>M&A / PMI</option>
+          <option>M&amp;A / PMI</option>
           <option>その他・複数領域</option>
         </select>
       </div>
-      <div class="form-group">
-        <label class="form-label">お問い合わせ内容 *</label>
-        <textarea class="form-textarea" placeholder="ご相談内容をお聞かせください。どうぞお気軽に。"></textarea>
+      <div class="fg">
+        <label class="flabel">お問い合わせ内容 *</label>
+        <textarea class="ftxt" placeholder="ご相談内容をお聞かせください。どうぞお気軽に。"></textarea>
       </div>
-      <button class="form-submit">送信する →</button>
-    </div>
+      <button type="submit" class="fsub">送信する →</button>
+    </form>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div>
-    <div class="footer-logo-en">KALEIDO</div>
-    <div class="footer-logo-ja">株式会社カレイド</div>
+    <div class="ft-en">KALEIDO</div>
+    <div class="ft-ja">株式会社カレイド</div>
   </div>
-  <div class="footer-copy">© 2025 Kaleido Inc. All rights reserved.</div>
+  <div class="ft-copy">© 2025 Kaleido Inc. All rights reserved.</div>
 </footer>
 
 </body>
