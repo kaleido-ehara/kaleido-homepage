@@ -2,14 +2,14 @@ const { useState, useEffect, useRef } = React;
 
 // ============ DATA ============
 const SERVICES = [
-  { num: '00', jp: '経営戦略', en: 'Management Strategy', desc: '全ての支援領域を束ねるコアドメイン。経営の方向性を定め、実行可能な戦略へと落とし込みます。' },
-  { num: '01', jp: '人事・組織', en: 'HR & Organization', desc: '採用・評価・組織設計・人材育成。人的資本経営の実践を支援します。' },
-  { num: '02', jp: 'マーケティング', en: 'Marketing', desc: '顧客獲得・LTV向上・デジタルマーケティング戦略の設計と実行支援。' },
-  { num: '03', jp: 'ブランディング', en: 'Branding', desc: '企業・サービスブランドの構築。VI設計からブランド浸透まで一貫支援。' },
-  { num: '04', jp: '広報PR', en: 'Public Relations', desc: 'メディア戦略・プレスリリース・SNS広報。パブリックイメージの最大化。' },
-  { num: '05', jp: 'AI活用', en: 'AI Integration', desc: '業務へのAI導入・プロンプト設計・自動化ワークフロー構築で生産性を革新。' },
-  { num: '06', jp: 'DX', en: 'Digital Transformation', desc: 'デジタル化戦略・ツール選定・社内定着まで、DX推進を伴走支援。' },
-  { num: '07', jp: 'M&A / PMI', en: 'M&A · Post-Merger', desc: 'M&A戦略・デューデリジェンス・PMI（統合後マネジメント）の実行支援。' },
+  { num: '01', jp: '経営戦略', en: 'Management Strategy', desc: '本質的な価値と進むべき方向を定め、経営判断に確信をもたらします。' },
+  { num: '02', jp: '事業戦略', en: 'Business Strategy', desc: '事業固有の強みを源泉に、持続的な成長を実現する道筋を共に描きます。' },
+  { num: '03', jp: '組織・人事', en: 'HR & Organization', desc: '採用・評価・制度設計・人材育成。人的資本経営の実践を支援します。' },
+  { num: '04', jp: 'マーケティング', en: 'Marketing', desc: 'ブランディング・顧客獲得・LTV向上・デジタルマーケティング戦略の設計と実行支援。' },
+  { num: '05', jp: '広報PR', en: 'Public Relations', desc: 'メディア戦略・プレスリリース・SNS広報。パブリックイメージの最大化。' },
+  { num: '06', jp: 'AI活用', en: 'AI Integration', desc: '業務へのAI導入・自動化ワークフロー構築で生産性を革新。' },
+  { num: '07', jp: 'DX', en: 'Digital Transformation', desc: 'デジタル化戦略・ツール選定、導入・社内定着まで、DX推進を伴走支援。' },
+  { num: '08', jp: 'M&A / PMI', en: 'M&A · Post-Merger', desc: 'M&A戦略・デューデリジェンス・PMI（統合後マネジメント）の実行支援。' },
 ];
 
 const APPROACH = [
@@ -44,7 +44,6 @@ function Nav() {
   }, []);
 
   const links = [
-    { href: '#concept', label: 'Concept' },
     { href: '#services', label: 'Services' },
     { href: '#approach', label: 'Approach' },
     { href: '#why', label: 'Why Kaleido' },
@@ -102,23 +101,10 @@ function Hero({ palette, speed }) {
           同じ形の支援は、<br/>
           <span className="accent-mark-2">一つとしてない。</span>
         </h1>
-        <p className="hero-title-en reveal reveal-delay-2">
-          Never the same form, twice — bespoke consulting for every client.
+        <p className="hero-desc reveal reveal-delay-2">
+          経営戦略・人事・マーケティング・DX・AI活用まで、カレイドは多面的な専門性で貴社の事業成長に伴走します。<br/>
+          問いと対話から始まる、オーダーメイドの支援を提供いたします。
         </p>
-        <p className="hero-desc reveal reveal-delay-3">
-          経営戦略・人事・マーケティング・AI活用まで、カレイドは多面的な専門性で貴社の成長に伴走します。テンプレートではなく、問いと対話から始まる、オーダーメイドの支援を。
-        </p>
-        <div className="hero-meta reveal reveal-delay-4">
-          <span>Strategy</span>
-          <span>/</span>
-          <span>People</span>
-          <span>/</span>
-          <span>Brand</span>
-          <span>/</span>
-          <span>AI</span>
-          <span>/</span>
-          <span>M&amp;A</span>
-        </div>
       </div>
       <div className="hero-scroll">
         <span>Scroll</span>
@@ -184,7 +170,7 @@ function Etymology() {
             </div>
           </div>
           <p className="etym-text reveal reveal-delay-3">
-            「Kaleido」はギリシャ語の <em>kalos</em>（美しい）と <em>eidos</em>（形態）を語源とする接頭辞。万華鏡＝<em>Kaleidoscope</em> の前半部分から来ており、変幻極まりない、二度と同じ形にはならないという意味を持ちます。多彩で多面的なコンサルティングのあり方を体現した名前です。
+            「Kaleido」はギリシャ語の <em>kalos</em>（美しい）と <em>eidos</em>（形態）を語源としています。万華鏡＝<em>Kaleidoscope</em> の前半部分から来ており、変幻極まりない、二度と同じ形にはならないという意味を持ちます。多彩で多面的なコンサルティングのあり方を体現しています。
           </p>
         </div>
       </div>
@@ -205,8 +191,7 @@ function Services({ palette, speed }) {
           <div className="section-label">Services</div>
           <h2 className="section-title">支援領域</h2>
           <p className="section-lead">
-            経営の全領域にわたる専門チームが、貴社の課題に応じて<br/>
-            ベストな組み合わせで対応します。
+            経営の全領域にわたる専門チームで、貴社の事業成長・課題解決に伴走いたします。
           </p>
         </div>
         <div className="services-grid reveal reveal-delay-1">
@@ -374,7 +359,6 @@ function App() {
     <>
       <Nav />
       <Hero palette={palette} speed={tweaks.spinSpeed} />
-      <Concept palette={palette} speed={tweaks.spinSpeed} />
       <Etymology />
       <Services palette={palette} speed={tweaks.spinSpeed} />
       <Approach />
