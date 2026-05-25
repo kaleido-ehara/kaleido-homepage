@@ -270,12 +270,13 @@ function Why({ palette, speed }) {
 
 // ============ CTA ============
 // Google Forms の action URL とエントリーID
-const GF_ACTION = 'GOOGLE_FORM_ACTION_URL';
+const GF_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLScFb_ce0IOdee0j7CMOqnmuGYxadPuJN1FPJuf3ny30V75KIQ/formResponse';
 const GF = {
-  name:    'ENTRY_NAME',
-  company: 'ENTRY_COMPANY',
-  email:   'ENTRY_EMAIL',
-  message: 'ENTRY_MESSAGE',
+  name:    'entry.2028024650',
+  company: 'entry.411310028',
+  phone:   'entry.1137644916',
+  email:   'entry.1556383029',
+  message: 'entry.889165127',
 };
 
 function CTA() {
@@ -314,13 +315,19 @@ function CTA() {
                 <input className="cf-input" type="text" name={GF.name} required placeholder="山田 太郎" />
               </div>
               <div className="cf-group">
-                <label className="cf-label">会社名</label>
+                <label className="cf-label">貴社名</label>
                 <input className="cf-input" type="text" name={GF.company} placeholder="株式会社〇〇" />
               </div>
             </div>
-            <div className="cf-group">
-              <label className="cf-label">メールアドレス <span>*</span></label>
-              <input className="cf-input" type="email" name={GF.email} required placeholder="taro@example.com" />
+            <div className="cf-row">
+              <div className="cf-group">
+                <label className="cf-label">メールアドレス <span>*</span></label>
+                <input className="cf-input" type="email" name={GF.email} required placeholder="taro@example.com" />
+              </div>
+              <div className="cf-group">
+                <label className="cf-label">電話番号</label>
+                <input className="cf-input" type="tel" name={GF.phone} placeholder="03-0000-0000" />
+              </div>
             </div>
             <div className="cf-group">
               <label className="cf-label">お問い合わせ内容 <span>*</span></label>
