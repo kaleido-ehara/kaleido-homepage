@@ -69,20 +69,35 @@ a { color: inherit; text-decoration: none; }
   border-bottom: 1px solid var(--line);
 }
 .nav-logo {
-  font-family: var(--sans);
-  font-size: 16px;
-  letter-spacing: 0.32em;
-  font-weight: 700;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  text-decoration: none;
 }
-.nav-logo .dot {
-  display: inline-block;
-  width: 10px; height: 10px;
-  background: var(--accent);
-  border-radius: 0;
-  transform: rotate(45deg);
+.nav-symbol {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.nav-logo-en {
+  font-family: 'Marcellus', 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #fff;
+  line-height: 1;
+}
+.nav-logo-ja {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: rgba(255,255,255,0.38);
+  font-weight: 300;
+  line-height: 1;
 }
 .nav-links {
   display: flex;
@@ -829,21 +844,39 @@ section {
   font-weight: 500;
 }
 .footer-logo {
-  font-family: var(--sans);
-  font-size: 14px;
-  letter-spacing: 0.32em;
-  color: #fff;
-  font-weight: 700;
-  text-transform: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
-.footer-logo .dot {
-  display: inline-block;
-  width: 10px; height: 10px;
-  background: var(--accent);
-  transform: rotate(45deg);
+.footer-symbol {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.footer-logo-en {
+  font-family: 'Marcellus', 'Times New Roman', serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  line-height: 1;
+}
+.footer-logo-ja {
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.28);
+  font-weight: 300;
+  line-height: 1;
+}
+.footer-copy {
+  font-size: 11px;
+  color: rgba(255,255,255,0.22);
+  letter-spacing: 0.06em;
 }
 
 /* ============ REVEAL ANIMATIONS ============ */

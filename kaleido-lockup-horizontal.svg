@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-24 -24 335.6 138" width="671.2" height="276">
+  <title>Kaleido Horizontal Lockup</title>
+  <desc>株式会社カレイド 横組みロックアップ (紙地)</desc>
+
+  
+  <svg x="0" y="0" width="90" height="90" viewBox="-100 -100 200 200" overflow="visible">
+    <g transform="rotate(0)">
+    <path d="M 88,0 C 76,-8 64,-10 52,-6 C 64,-2 76,2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 88,0 C 76,8 64,10 52,6 C 64,2 76,-2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 44,-14 L 28,-4 L 44,-4 Z" fill="#DC2626"></path>
+    <path d="M 44,14 L 28,4 L 44,4 Z" fill="#DC2626"></path>
+    <circle cx="22" cy="-9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="22" cy="9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="62" cy="0" r="3.4" fill="#0F172A"></circle>
+    </g>
+    <g transform="rotate(72)">
+    <path d="M 88,0 C 76,-8 64,-10 52,-6 C 64,-2 76,2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 88,0 C 76,8 64,10 52,6 C 64,2 76,-2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 44,-14 L 28,-4 L 44,-4 Z" fill="#DC2626"></path>
+    <path d="M 44,14 L 28,4 L 44,4 Z" fill="#DC2626"></path>
+    <circle cx="22" cy="-9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="22" cy="9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="62" cy="0" r="3.4" fill="#0F172A"></circle>
+    </g>
+    <g transform="rotate(144)">
+    <path d="M 88,0 C 76,-8 64,-10 52,-6 C 64,-2 76,2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 88,0 C 76,8 64,10 52,6 C 64,2 76,-2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 44,-14 L 28,-4 L 44,-4 Z" fill="#DC2626"></path>
+    <path d="M 44,14 L 28,4 L 44,4 Z" fill="#DC2626"></path>
+    <circle cx="22" cy="-9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="22" cy="9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="62" cy="0" r="3.4" fill="#0F172A"></circle>
+    </g>
+    <g transform="rotate(216)">
+    <path d="M 88,0 C 76,-8 64,-10 52,-6 C 64,-2 76,2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 88,0 C 76,8 64,10 52,6 C 64,2 76,-2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 44,-14 L 28,-4 L 44,-4 Z" fill="#DC2626"></path>
+    <path d="M 44,14 L 28,4 L 44,4 Z" fill="#DC2626"></path>
+    <circle cx="22" cy="-9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="22" cy="9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="62" cy="0" r="3.4" fill="#0F172A"></circle>
+    </g>
+    <g transform="rotate(288)">
+    <path d="M 88,0 C 76,-8 64,-10 52,-6 C 64,-2 76,2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 88,0 C 76,8 64,10 52,6 C 64,2 76,-2 88,0 Z" fill="#1E3A8A"></path>
+    <path d="M 44,-14 L 28,-4 L 44,-4 Z" fill="#DC2626"></path>
+    <path d="M 44,14 L 28,4 L 44,4 Z" fill="#DC2626"></path>
+    <circle cx="22" cy="-9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="22" cy="9" r="3.6" fill="#FCD34D"></circle>
+    <circle cx="62" cy="0" r="3.4" fill="#0F172A"></circle>
+    </g>
+  </svg>
+
+  
+  <g transform="translate(114, 45)">
+    
+    <text x="0" y="-6" font-family="Marcellus, &#39;Times New Roman&#39;, serif" font-size="40" fill="#0F172A" dominant-baseline="alphabetic">Kaleido</text>
+
+    
+    <text x="0" y="28" font-family="&#39;Shippori Mincho&#39;, &#39;Yu Mincho&#39;, &#39;Hiragino Mincho ProN&#39;, serif" font-size="10" letter-spacing="3.8" fill="#0F172A" fill-opacity="0.7" dominant-baseline="alphabetic">株式会社カレイド</text>
+  </g>
+</svg>

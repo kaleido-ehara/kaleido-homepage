@@ -53,7 +53,11 @@ function Nav() {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <a href="#top" className="nav-logo">
-        <span className="dot"></span>KALEIDO
+        <img src="kaleido-symbol.svg" alt="Kaleido symbol" className="nav-symbol" />
+        <div className="nav-logo-text">
+          <span className="nav-logo-en">Kaleido</span>
+          <span className="nav-logo-ja">株式会社カレイド</span>
+        </div>
       </a>
       <div className="nav-links">
         {links.map(l => (
@@ -299,8 +303,14 @@ function CTA({ palette, speed }) {
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-logo"><span className="dot"></span>KALEIDO CONSULTING</div>
-      <div>© 2026 Kaleido Consulting Inc. · All Rights Reserved</div>
+      <div className="footer-logo">
+        <img src="kaleido-symbol.svg" alt="Kaleido" className="footer-symbol" />
+        <div className="footer-logo-text">
+          <span className="footer-logo-en">Kaleido</span>
+          <span className="footer-logo-ja">株式会社カレイド</span>
+        </div>
+      </div>
+      <div className="footer-copy">© 2026 Kaleido Inc. · All Rights Reserved</div>
     </footer>
   );
 }
