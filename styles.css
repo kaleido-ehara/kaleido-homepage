@@ -861,6 +861,39 @@ section {
 .reveal-delay-3 { transition-delay: 0.24s; }
 .reveal-delay-4 { transition-delay: 0.32s; }
 
+/* ============ COMPANY ============ */
+.company {
+  background: var(--bg-2, #f6f5f2);
+  border-bottom: 1px solid var(--line);
+}
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 48px;
+  max-width: 720px;
+}
+.company-table th,
+.company-table td {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  text-align: left;
+  vertical-align: top;
+  font-weight: 400;
+}
+.company-table th {
+  width: 140px;
+  color: var(--ink-3, #888);
+  letter-spacing: 0.04em;
+  padding-right: 32px;
+  white-space: nowrap;
+}
+.company-table td {
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.7;
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 960px) {
   .nav { padding: 16px 20px; }

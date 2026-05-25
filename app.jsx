@@ -47,6 +47,7 @@ function Nav() {
     { href: '#services', label: 'Services' },
     { href: '#approach', label: 'Approach' },
     { href: '#why', label: 'Why Kaleido' },
+    { href: '#company', label: 'Company' },
   ];
 
   return (
@@ -341,6 +342,35 @@ function TweaksHost({ tweaks, setTweak }) {
   );
 }
 
+// ============ COMPANY ============
+function Company() {
+  const ref = useReveal();
+  const rows = [
+    { label: '会社名',    value: '株式会社カレイド' },
+    { label: '所在地',    value: '〒106-0032　東京都港区六本木３丁目１６番１２号 六本木ＫＳビル５Ｆ' },
+    { label: '資本金',    value: '100,000円' },
+    { label: '代表取締役', value: '江原 楓馬' },
+  ];
+  return (
+    <section id="company" className="company section" ref={ref}>
+      <div className="reveal">
+        <div className="section-label">Company</div>
+        <h2 className="section-title">会社概要</h2>
+      </div>
+      <table className="company-table reveal reveal-delay-1">
+        <tbody>
+          {rows.map(r => (
+            <tr key={r.label}>
+              <th>{r.label}</th>
+              <td>{r.value}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+}
+
 // ============ APP ============
 function App() {
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
@@ -363,6 +393,7 @@ function App() {
       <Services palette={palette} speed={tweaks.spinSpeed} />
       <Approach />
       <Why palette={palette} speed={tweaks.spinSpeed} />
+      <Company />
       <CTA palette={palette} speed={tweaks.spinSpeed} />
       <Footer />
       <TweaksHost tweaks={tweaks} setTweak={setTweak} />
