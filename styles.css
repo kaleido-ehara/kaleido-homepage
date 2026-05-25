@@ -73,7 +73,7 @@ a { color: inherit; text-decoration: none; }
   text-decoration: none;
 }
 .nav-lockup {
-  height: 64px;
+  height: 88px;
   width: auto;
   flex-shrink: 0;
 }
