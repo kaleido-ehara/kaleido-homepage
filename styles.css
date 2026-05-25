@@ -759,19 +759,84 @@ section {
   font-weight: 300;
   margin-bottom: 40px;
 }
-.cta-simple-btn {
-  display: inline-block;
+/* Contact form */
+.cf {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.cf-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cf-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.45);
+  font-weight: 400;
+}
+.cf-label span { color: rgba(255,255,255,0.3); }
+.cf-input, .cf-textarea {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 12px 14px;
+  font-family: var(--sans-jp);
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+.cf-input::placeholder, .cf-textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+.cf-input:focus, .cf-textarea:focus {
+  border-color: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.09);
+}
+.cf-textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.7;
+}
+.cf-submit {
+  background: #fff;
+  color: #1E3A8A;
+  border: none;
+  padding: 14px 32px;
   font-family: var(--sans);
   font-size: 13px;
   letter-spacing: 0.12em;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 16px 36px;
-  transition: background 0.2s, border-color 0.2s;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  align-self: flex-start;
 }
-.cta-simple-btn:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.5);
+.cf-submit:hover { opacity: 0.85; }
+.cf-thanks {
+  max-width: 640px;
+  margin: 32px auto 0;
+  padding: 32px;
+  border: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  line-height: 2;
+}
+@media (max-width: 600px) {
+  .cf-row { grid-template-columns: 1fr; }
 }
 
 .footer {

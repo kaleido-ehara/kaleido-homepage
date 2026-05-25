@@ -269,7 +269,22 @@ function Why({ palette, speed }) {
 }
 
 // ============ CTA ============
+// Google Forms の action URL とエントリーID
+const GF_ACTION = 'GOOGLE_FORM_ACTION_URL';
+const GF = {
+  name:    'ENTRY_NAME',
+  company: 'ENTRY_COMPANY',
+  email:   'ENTRY_EMAIL',
+  message: 'ENTRY_MESSAGE',
+};
+
 function CTA() {
+  const [sent, setSent] = React.useState(false);
+
+  const handleSubmit = () => {
+    setTimeout(() => setSent(true), 600);
+  };
+
   return (
     <section id="contact" className="cta-simple">
       <div className="section-label">Contact</div>
@@ -277,9 +292,44 @@ function CTA() {
       <p className="cta-simple-sub">
         お気軽にご連絡ください。担当より早急にご連絡いたします。
       </p>
-      <a href="mailto:contact@kaleido-consulting.jp" className="cta-simple-btn">
-        contact@kaleido-consulting.jp
-      </a>
+
+      {sent ? (
+        <div className="cf-thanks">
+          <p>送信が完了しました。</p>
+          <p>担当よりご連絡いたします。</p>
+        </div>
+      ) : (
+        <>
+          <iframe name="gf-iframe" style={{display:'none'}} title="hidden"></iframe>
+          <form
+            className="cf"
+            action={GF_ACTION}
+            method="POST"
+            target="gf-iframe"
+            onSubmit={handleSubmit}
+          >
+            <div className="cf-row">
+              <div className="cf-group">
+                <label className="cf-label">お名前 <span>*</span></label>
+                <input className="cf-input" type="text" name={GF.name} required placeholder="山田 太郎" />
+              </div>
+              <div className="cf-group">
+                <label className="cf-label">会社名</label>
+                <input className="cf-input" type="text" name={GF.company} placeholder="株式会社〇〇" />
+              </div>
+            </div>
+            <div className="cf-group">
+              <label className="cf-label">メールアドレス <span>*</span></label>
+              <input className="cf-input" type="email" name={GF.email} required placeholder="taro@example.com" />
+            </div>
+            <div className="cf-group">
+              <label className="cf-label">お問い合わせ内容 <span>*</span></label>
+              <textarea className="cf-textarea" name={GF.message} required placeholder="ご相談内容をお気軽にお書きください。"></textarea>
+            </div>
+            <button type="submit" className="cf-submit">送信する →</button>
+          </form>
+        </>
+      )}
     </section>
   );
 }
