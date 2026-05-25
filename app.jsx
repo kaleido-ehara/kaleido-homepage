@@ -53,11 +53,7 @@ function Nav() {
   return (
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <a href="#top" className="nav-logo">
-        <img src="kaleido-symbol.svg" alt="Kaleido symbol" className="nav-symbol" />
-        <div className="nav-logo-text">
-          <span className="nav-logo-en">Kaleido</span>
-          <span className="nav-logo-ja">株式会社カレイド</span>
-        </div>
+        <img src="kaleido-lockup-horizontal-ai.svg" alt="Kaleido Consulting" className="nav-lockup" />
       </a>
       <div className="nav-links">
         {links.map(l => (
