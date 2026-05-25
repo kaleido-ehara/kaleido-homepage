@@ -13,17 +13,17 @@ const SERVICES = [
 ];
 
 const APPROACH = [
-  { num: '01', title: 'ヒアリング・診断', desc: '経営課題・組織状態・市場環境を深くヒアリングし、本質的な問いを設定します。' },
+  { num: '01', title: 'ヒアリング', desc: '経営課題・組織状態・市場環境を深くヒアリングし、本質的な問いを設定します。' },
   { num: '02', title: '戦略設計', desc: '貴社固有の状況に合わせたオーダーメイドの戦略・施策ロードマップを策定。' },
-  { num: '03', title: 'チーム編成', desc: '必要な専門性を持つコンサルタント・フリーランスを最適に組み合わせます。' },
-  { num: '04', title: '実行支援', desc: '計画倒れにならないよう、施策実行を現場レベルまで伴走してサポート。' },
+  { num: '03', title: 'チーム編成', desc: '必要な専門性を持つコンサルタントを最適に組み合わせます。' },
+  { num: '04', title: '実行支援', desc: '施策実行を現場レベルまで伴走してサポート。' },
   { num: '05', title: '効果検証・改善', desc: '定量・定性の両面で成果を検証し、次の打ち手へとつなげます。' },
 ];
 
 const WHY = [
-  { num: '01', title: 'オーダーメイドの支援設計', desc: '業界標準のテンプレートではなく、貴社の状況・フェーズ・カルチャーに合わせてゼロから支援を設計します。二度と同じ形にはならない——それがカレイドの流儀です。' },
+  { num: '01', title: 'オーダーメイド型の支援設計', desc: '貴社の状況・フェーズ・カルチャーに合わせてゼロから支援を設計します。二度と同じ形にはならない——それがカレイドの流儀です。' },
   { num: '02', title: '多領域をカバーする専門チーム', desc: '経営戦略からAI・M&Aまで、8つの専門ドメインを一社でカバー。複合的な課題にも、最適なチームを素早く編成して対応します。' },
-  { num: '03', title: '戦略から実行まで一貫伴走', desc: '「提言で終わり」にしません。策定した戦略の実行フェーズまで責任を持って伴走し、現場に根付く成果を共に創ります。' },
+  { num: '03', title: '戦略から実行まで一貫伴走', desc: '策定した戦略の実行フェーズまで責任を持って伴走し、現場に根付く成果を共に創ります。' },
 ];
 
 // ============ PALETTES — vivid jewel tones ============
@@ -224,8 +224,7 @@ function Approach() {
         <div className="section-label">Our Approach</div>
         <h2 className="section-title">カレイドのアプローチ</h2>
         <p className="section-lead">
-          課題の表面ではなく本質に向き合い、<br/>
-          戦略から実行まで一貫して伴走します。
+          本質に向き合い、戦略から実行まで一気通貫して伴走いたします。
         </p>
       </div>
       <div className="approach-list">
@@ -270,32 +269,18 @@ function Why({ palette, speed }) {
 }
 
 // ============ CTA ============
-function CTA({ palette, speed }) {
+function CTA() {
   return (
-    <section id="contact" className="cta">
-      <div className="cta-kaleido">
-        <Kaleidoscope palette={palette} seed={21} speed={speed} />
-      </div>
-      <div className="cta-inner">
-        <div>
-          <h2 className="cta-title">
-            貴社だけの<br/>
-            <span className="accent">形</span>を、設計する。
-          </h2>
-          <span className="cta-title-en">Let's find your form.</span>
-          <p className="cta-sub">
-            二度と同じ形にはならない、貴社のためだけの支援を。<br/>
-            まずは、30分の無料カウンセリングから始めましょう。
-          </p>
-        </div>
-        <div className="cta-btn-wrap">
-          <a href="#" className="cta-btn">
-            お問い合わせ
-            <span className="arrow">→</span>
-          </a>
-          <div className="cta-meta">contact@kaleido-consulting.jp</div>
-        </div>
-      </div>
+    <section id="contact" className="cta-simple">
+      <div className="section-label">Contact</div>
+      <h2 className="cta-simple-title">お問い合わせ</h2>
+      <p className="cta-simple-sub">
+        ご相談・お見積もりは無料です。お気軽にご連絡ください。<br/>
+        担当コンサルタントより2営業日以内にご連絡いたします。
+      </p>
+      <a href="mailto:contact@kaleido-consulting.jp" className="cta-simple-btn">
+        contact@kaleido-consulting.jp
+      </a>
     </section>
   );
 }
@@ -404,7 +389,7 @@ function App() {
       <Approach />
       <Why palette={palette} speed={tweaks.spinSpeed} />
       <Company />
-      <CTA palette={palette} speed={tweaks.spinSpeed} />
+      <CTA />
       <Footer />
       <TweaksHost tweaks={tweaks} setTweak={setTweak} />
     </>
