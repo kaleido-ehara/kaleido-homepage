@@ -1,12 +1,8 @@
 <?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 -32 351.6 154" width="703.2" height="308">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295 90" width="295" height="90">
   <title>Kaleido Horizontal Lockup (on AI)</title>
-  <desc>株式会社カレイド 横組みロックアップ (藍地)</desc>
+  <desc>株式会社カレイド 横組みロックアップ (藍地・透過)</desc>
 
-  
-  <rect x="-32" y="-32" width="351.6" height="154" fill="#1E3A8A"></rect>
-
-  
   <svg x="0" y="0" width="90" height="90" viewBox="-100 -100 200 200" overflow="visible">
     <g transform="rotate(0)">
     <path d="M 88,0 C 76,-8 64,-10 52,-6 C 64,-2 76,2 88,0 Z" fill="#FCD34D"></path>
@@ -55,9 +51,8 @@
     </g>
   </svg>
 
-  
   <g transform="translate(114, 45)">
-    <text x="0" y="-6" font-family="Marcellus, &#39;Times New Roman&#39;, serif" font-size="40" fill="#f5f1e6" dominant-baseline="alphabetic">Kaleido</text>
-    <text x="0" y="28" font-family="&#39;Shippori Mincho&#39;, &#39;Yu Mincho&#39;, &#39;Hiragino Mincho ProN&#39;, serif" font-size="10" letter-spacing="3.8" fill="#f5f1e6" fill-opacity="0.7" dominant-baseline="alphabetic">株式会社カレイド</text>
+    <text x="0" y="-6" font-family="Marcellus, 'Times New Roman', serif" font-size="40" fill="#f5f1e6" dominant-baseline="alphabetic">Kaleido</text>
+    <text x="0" y="28" font-family="'Shippori Mincho', 'Yu Mincho', 'Hiragino Mincho ProN', serif" font-size="10" letter-spacing="3.8" fill="#f5f1e6" fill-opacity="0.7" dominant-baseline="alphabetic">株式会社カレイド</text>
   </g>
 </svg>
