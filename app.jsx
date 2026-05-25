@@ -275,8 +275,7 @@ function CTA() {
       <div className="section-label">Contact</div>
       <h2 className="cta-simple-title">お問い合わせ</h2>
       <p className="cta-simple-sub">
-        ご相談・お見積もりは無料です。お気軽にご連絡ください。<br/>
-        担当コンサルタントより2営業日以内にご連絡いたします。
+        お気軽にご連絡ください。担当より早急にご連絡いたします。
       </p>
       <a href="mailto:contact@kaleido-consulting.jp" className="cta-simple-btn">
         contact@kaleido-consulting.jp
