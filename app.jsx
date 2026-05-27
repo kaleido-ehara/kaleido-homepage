@@ -318,7 +318,7 @@ function CTA() {
             <div className="cf-row">
               <div className="cf-group">
                 <label className="cf-label">メールアドレス <span>*</span></label>
-                <input className="cf-input" type="email" name={GF.email} required placeholder="info@kaleido-consaluting.jp" />
+                <input className="cf-input" type="email" name={GF.email} required placeholder="info@kaleido-consulting.jp" />
               </div>
               <div className="cf-group">
                 <label className="cf-label">電話番号</label>
