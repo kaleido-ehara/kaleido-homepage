@@ -312,17 +312,17 @@ function CTA() {
               </div>
               <div className="cf-group">
                 <label className="cf-label">貴社名</label>
-                <input className="cf-input" type="text" name={GF.company} placeholder="株式会社〇〇" />
+                <input className="cf-input" type="text" name={GF.company} placeholder="株式会社カレイド" />
               </div>
             </div>
             <div className="cf-row">
               <div className="cf-group">
                 <label className="cf-label">メールアドレス <span>*</span></label>
-                <input className="cf-input" type="email" name={GF.email} required placeholder="taro@example.com" />
+                <input className="cf-input" type="email" name={GF.email} required placeholder="info@kaleido-consaluting.jp" />
               </div>
               <div className="cf-group">
                 <label className="cf-label">電話番号</label>
-                <input className="cf-input" type="tel" name={GF.phone} placeholder="03-0000-0000" />
+                <input className="cf-input" type="tel" name={GF.phone} placeholder="080-0000-0000" />
               </div>
             </div>
             <div className="cf-group">
