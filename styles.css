@@ -582,16 +582,18 @@ section {
 .approach {
   background: var(--bg-deep);
   border-bottom: 1px solid var(--line);
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .approach-list {
-  margin-top: 40px;
+  margin-top: 24px;
   border-top: 2px solid var(--ink);
 }
 .approach-row {
   display: grid;
   grid-template-columns: 100px 1.2fr 2fr;
   gap: 48px;
-  padding: 44px 0;
+  padding: 28px 0;
   border-bottom: 1px solid var(--line);
   align-items: start;
   transition: padding 0.3s ease, background 0.3s ease;
