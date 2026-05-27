@@ -889,11 +889,13 @@ section {
 .company {
   background: var(--bg-2, #f6f5f2);
   border-bottom: 1px solid var(--line);
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .company-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 48px;
+  margin-top: 24px;
   max-width: 720px;
 }
 .company-table th,
