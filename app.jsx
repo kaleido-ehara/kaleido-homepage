@@ -191,7 +191,7 @@ function Services({ palette, speed }) {
         <div className="reveal">
           <div className="section-label">Services</div>
           <h2 className="section-title">支援領域</h2>
-          <p className="section-lead">
+          <p className="section-lead" style={{whiteSpace:'nowrap'}}>
             経営の全領域にわたる専門チームで、貴社の事業成長・課題解決に伴走いたします。
           </p>
         </div>
