@@ -398,7 +398,7 @@ function Company() {
     { label: '代表取締役',  value: '江原 楓馬' },
     { label: '資本金',      value: '100,000円' },
     { label: '主要取引銀行', value: '三井住友銀行' },
-    { label: '事業内容',    value: '総合コンサルティングファーム' },
+    { label: '事業内容',    value: '総合コンサルティング' },
   ];
   return (
     <section id="company" className="company section" ref={ref}>
